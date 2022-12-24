@@ -23,7 +23,7 @@ public class Email {
 
     public void changePassword(String oldPassword, String newPassword){
         if(oldPassword == password && newPassword.length() >= 8) {
-            Pattern p = Pattern.compile("((?=.*[0-9])(?=.*[a-z])(?=.*[A-z])(?=.*[ ~`!@#$%^&*()_={[}]|\\:;\"'<,>.?/]))");
+            Pattern p = Pattern.compile("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[ ~`!@#$%^&*()_={[}]|\\:;\"'<,>.?/]))");
             Matcher m = p.matcher(newPassword);
             password = newPassword;
         }
