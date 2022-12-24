@@ -10,5 +10,4 @@ public class Meeting {
         this.startTime = startTime;
         this.endTime = endTime;
     }
-
 }

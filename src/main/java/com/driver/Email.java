@@ -1,5 +1,8 @@
 package com.driver;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Email {
 
     private String emailId;
@@ -19,6 +22,12 @@ public class Email {
     }
 
     public void changePassword(String oldPassword, String newPassword){
+        if(oldPassword == password && newPassword.length() >= 8) {
+            Pattern p = Pattern.compile("((?=.*[0-9])(?=.*[a-z])(?=.*[A-z])(?=.*[ ~`!@#$%^&*()_={[}]|\\:;\"'<,>.?/]))");
+            Matcher m = p.matcher(newPassword);
+            password = newPassword;
+        }
+
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
         // 1. It contains at least 8 characters
         // 2. It contains at least one uppercase letter
