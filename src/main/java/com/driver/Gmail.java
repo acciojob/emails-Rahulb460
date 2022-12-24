@@ -32,7 +32,7 @@ public class Gmail extends Email {
     public void deleteMail(String message){
         for(int i = 0; i < Inbox.size(); i++) {
             if(Inbox.get(i).message == message) {
-                Inbox.remove(i);
+                Trash.add(Inbox.remove(i));
             }
         }
         // Each message is distinct
